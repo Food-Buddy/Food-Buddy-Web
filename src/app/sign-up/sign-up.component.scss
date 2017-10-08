@@ -1,0 +1,29 @@
+@import '../../assets/styles/variables.scss';
+
+.app-form-modal{
+    width: 30%;
+    margin: auto;
+}
+
+.app-signup-container{
+    padding-top: 40px;
+    border-radius: 10px;
+    background-color: #f5f3f3;
+}
+
+.app-signup-form{
+    padding: 20px;
+}
+
+.app-form-title-big{
+    border-left: 8px solid;
+}
+
+.app-form-top-border{
+    height: 10px;
+    margin: auto;
+    width: 90%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px; 
+    background: $border-light-color;
+}

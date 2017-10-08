@@ -1,0 +1,14 @@
+@import './variables.scss';
+
+.app-form-title-big {
+    line-height: 46px;
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: $form-header-color-red;
+ }
+
+ .app-btn-primary{
+     color: $color-white;
+     background-color: $btn-primary-color;
+ }

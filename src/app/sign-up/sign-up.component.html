@@ -1,3 +1,42 @@
-<p>
-  sign-up works!
-</p>
+<div class="mt-5 app-form-modal">
+  <div class="app-form-top-border"></div>
+  <div class="app-signup-container">
+    <div class="pl-5 app-form-title-big">Sign Up</div>
+    <form class="app-signup-form" [formGroup]="signUpForm">
+      <mat-form-field class="w-100">
+        <input matInput placeholder="Enter your name*" formControlName="name">
+        <mat-icon matSuffix>create</mat-icon>
+        <mat-error *ngIf="signUpForm.controls.name.hasError('required')">
+          Please enter a user name.
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="w-100">
+        <input matInput placeholder="Enter your email id*" formControlName="email">
+        <mat-icon matSuffix>email</mat-icon>
+        <mat-error *ngIf="signUpForm.controls.email.hasError('required') || signUpForm.controls.email.hasError('pattern')">
+          Please enter a valid email id.
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="w-100">
+        <input matInput placeholder="Enter your password*" [type]="showPassword ? 'text' : 'password'" formControlName="password">
+        <mat-icon matSuffix (click)="showPassword = !showPassword">{{showPassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+        <mat-error *ngIf="signUpForm.controls.password.hasError('required')">
+          Please enter a password.
+        </mat-error>
+        <mat-error *ngIf="signUpForm.controls.password.hasError('minlength')">
+          Please must contain at least 5 letters.
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="w-100">
+        <input matInput placeholder="Re-enter your password*" [type]="showPasswordRepeat ? 'text' : 'password'" formControlName="passwordRepeat">
+        <mat-icon matSuffix (click)="showPasswordRepeat = !showPasswordRepeat">{{showPasswordRepeat ? 'visibility_off' : 'visibility'}}</mat-icon>
+        <mat-error *ngIf="signUpForm.controls.passwordRepeat.hasError('custom')">
+          Password do not match.
+        </mat-error>
+      </mat-form-field>
+      <div class="text-center app-btn-primary">
+        <button (click)="signUp()" class="w-100" mat-button>Sign Up</button>
+      </div>
+    </form>
+  </div>
+</div>
